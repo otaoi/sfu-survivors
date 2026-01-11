@@ -1,0 +1,148 @@
+[gd_scene load_steps=15 format=3 uid="uid://mirim62oc5sk"]
+
+[ext_resource type="Script" uid="uid://dy0lqf3sbjwah" path="res://scripts/dead_menu.gd" id="1_xwlsw"]
+[ext_resource type="Texture2D" uid="uid://cxxjj0ec85e0g" path="res://assets/purepng.com-raccoon-sittingracconwaschbeaerraccon-sittinggrey-raccon-481521103213washa.png" id="2_e1g3x"]
+[ext_resource type="FontFile" uid="uid://dkffhqkrv0mb6" path="res://assets/RaccoonSerif-Base.ttf" id="3_2os4g"]
+[ext_resource type="Texture2D" uid="uid://bfkjks3g7o2p0" path="res://assets/5b3554aad99aaa8eb1330d9db792a147af4ddeffb31d15cafb8c576d35a011f3.png" id="3_e1g3x"]
+[ext_resource type="Texture2D" uid="uid://c4xyb2eftu6se" path="res://assets/—Pngtree—old fashioned bath tub_13857551.png" id="4_ggjn8"]
+[ext_resource type="Texture2D" uid="uid://f28m58x661eq" path="res://assets/Employment-Job-Application-550x712.webp" id="5_024rw"]
+[ext_resource type="Texture2D" uid="uid://bqevuu4p40nk7" path="res://assets/cumpledpaper.png" id="6_x1gki"]
+[ext_resource type="Texture2D" uid="uid://crdex5mqpk48x" path="res://assets/b41fdd8bae365f8f5240ffbea61476f9.png" id="7_gbvo7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2wh52"]
+font = ExtResource("3_2os4g")
+font_size = 84
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ucygd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mipys"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8a8k8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7la6k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2nypq"]
+
+[node name="DeadMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_xwlsw")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Purepng_comRaccoonSittingracconwaschbeaerracconSittinggreyRaccon481521103213Washa" type="Sprite2D" parent="ColorRect/VBoxContainer"]
+position = Vector2(146, 25)
+scale = Vector2(0.295, 0.295)
+texture = ExtResource("2_e1g3x")
+
+[node name="5b3554Aad99Aaa8Eb1330d9Db792a147Af4Ddeffb31d15Cafb8c576d35a011f3" type="Sprite2D" parent="ColorRect/VBoxContainer"]
+position = Vector2(158.25005, 75.00001)
+scale = Vector2(1.1179243, 0.4274406)
+texture = ExtResource("3_e1g3x")
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "RIP"
+label_settings = SubResource("LabelSettings_2wh52")
+
+[node name="—pngtree—oldFashionedBathTub13857551" type="Sprite2D" parent="ColorRect/VBoxContainer"]
+position = Vector2(-166, -60.99999)
+rotation = -0.54105204
+scale = Vector2(0.13, 0.13)
+texture = ExtResource("4_ggjn8")
+
+[node name="EmploymentJobApplication550x712" type="Sprite2D" parent="ColorRect/VBoxContainer"]
+position = Vector2(367.22552, 192.57547)
+rotation = 0.4886922
+scale = Vector2(0.425, 0.425)
+texture = ExtResource("5_024rw")
+
+[node name="Cumpledpaper" type="Sprite2D" parent="ColorRect/VBoxContainer"]
+position = Vector2(-161.99998, 195)
+scale = Vector2(-0.1, -0.1)
+texture = ExtResource("6_x1gki")
+
+[node name="B41Fdd8Bae365f8f5240Ffbea61476f9" type="Sprite2D" parent="ColorRect/VBoxContainer"]
+position = Vector2(311.2256, -67.42456)
+rotation = 0.73129296
+scale = Vector2(0.175, 0.175)
+texture = ExtResource("7_gbvo7")
+
+[node name="ExitButton" type="Button" parent="ColorRect/VBoxContainer"]
+visible = false
+modulate = Color(0.99582344, 0.9746885, 0.95078236, 1)
+self_modulate = Color(0.10314422, 0.7733491, 0.88119924, 1)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 39
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ucygd")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_mipys")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_8a8k8")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_7la6k")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2nypq")
+text = "Exit to Main Menu"
+
+[node name="Button" type="Button" parent="ColorRect"]
+visible = false
+layout_mode = 0
+offset_left = 270.0
+offset_top = 400.0
+offset_right = 1010.0
+offset_bottom = 468.0
+text = "Try Again?"
+
+[node name="ExitButton" type="Button" parent="ColorRect"]
+modulate = Color(0.99582344, 0.9746885, 0.95078236, 1)
+self_modulate = Color(1, 0.25098205, 0.2696181, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -108.0
+offset_top = 168.82501
+offset_right = 108.0
+offset_bottom = 203.82532
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 39
+theme_override_fonts/font = ExtResource("3_2os4g")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ucygd")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_mipys")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_8a8k8")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_7la6k")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2nypq")
+text = "RESTART GAME"
+
+[connection signal="pressed" from="ColorRect/ExitButton" to="." method="_on_exit_button_pressed"]

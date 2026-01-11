@@ -1,0 +1,25 @@
+[gd_scene load_steps=7 format=3 uid="uid://dstpbnuj8u7ek"]
+
+[ext_resource type="Script" uid="uid://bjryh2fk8ba6m" path="res://scripts/enemy.gd" id="1_7p1mj"]
+[ext_resource type="Texture2D" uid="uid://crdex5mqpk48x" path="res://assets/b41fdd8bae365f8f5240ffbea61476f9.png" id="2_5uy6h"]
+[ext_resource type="PackedScene" uid="uid://dxiu5ayq60bi0" path="res://scenes/gem.tscn" id="2_c4w8v"]
+[ext_resource type="Texture2D" uid="uid://f28m58x661eq" path="res://assets/Employment-Job-Application-550x712.webp" id="3_c4w8v"]
+[ext_resource type="Texture2D" uid="uid://c4xyb2eftu6se" path="res://assets/—Pngtree—old fashioned bath tub_13857551.png" id="4_xwavj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7p1mj"]
+radius = 3.1622777
+
+[node name="Enemy" type="CharacterBody2D" groups=["enemies"]]
+scale = Vector2(8.14, 8.14)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_7p1mj")
+gem_scene = ExtResource("2_c4w8v")
+skins = Array[Texture2D]([ExtResource("2_5uy6h"), ExtResource("3_c4w8v"), ExtResource("4_xwavj")])
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("2_5uy6h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_7p1mj")

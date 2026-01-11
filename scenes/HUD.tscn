@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://dqqeil5hyxexx"]
+
+[ext_resource type="Script" uid="uid://mk2qjc4q8sd0" path="res://scripts/hud.gd" id="1_qpvh6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fls4u"]
+bg_color = Color(0.31666672, 1, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1etfg"]
+bg_color = Color(0.98, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_qpvh6"]
+font_size = 32
+
+[node name="Hud" type="CanvasLayer" groups=["hud"]]
+script = ExtResource("1_qpvh6")
+
+[node name="XPBar" type="ProgressBar" parent="."]
+custom_minimum_size = Vector2(0, 20)
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 27.0
+grow_horizontal = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_fls4u")
+show_percentage = false
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+offset_left = 10.0
+offset_top = 37.0
+offset_right = 390.0
+offset_bottom = 64.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_1etfg")
+value = 100.0
+show_percentage = false
+
+[node name="TimerLabel" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 37.0
+offset_right = 20.0
+offset_bottom = 60.0
+grow_horizontal = 2
+label_settings = SubResource("LabelSettings_qpvh6")

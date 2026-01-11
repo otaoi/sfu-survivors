@@ -1,0 +1,74 @@
+[gd_scene load_steps=7 format=3 uid="uid://1b6oia14oun2"]
+
+[ext_resource type="Texture2D" uid="uid://7qw2tkt8xc2v" path="res://assets/notebookbgrnd.jpg" id="1_0wfyh"]
+[ext_resource type="Script" uid="uid://qo8ibxr8d5ir" path="res://scripts/main.gd" id="1_sugp2"]
+[ext_resource type="PackedScene" uid="uid://dstpbnuj8u7ek" path="res://scenes/enemy.tscn" id="2_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://b5an58pb0js3g" path="res://scenes/player.tscn" id="2_sugp2"]
+[ext_resource type="PackedScene" uid="uid://dy2gdldw3hedo" path="res://scenes/levelUpUI.tscn" id="5_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://dqqeil5hyxexx" path="res://scenes/HUD.tscn" id="6_tefeu"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_sugp2")
+enemy_scene = ExtResource("2_jyhfs")
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+repeat_size = Vector2(1080, 720)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+modulate = Color(0.93416464, 0.8423229, 0.64810956, 1)
+scale = Vector2(0.256, 0.21565688)
+texture = ExtResource("1_0wfyh")
+
+[node name="WorldEntities" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Player" parent="WorldEntities" instance=ExtResource("2_sugp2")]
+
+[node name="Enemies" type="Node2D" parent="WorldEntities"]
+
+[node name="Node2D2" type="Node2D" parent="WorldEntities"]
+
+[node name="Node2D3" type="Node2D" parent="WorldEntities"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="XPBar" type="ProgressBar" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_right = 4.0
+offset_bottom = 27.0
+
+[node name="HealthBar" type="ProgressBar" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_right = 4.0
+offset_bottom = 27.0
+
+[node name="TimerLabel" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="DeathMenu" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="EnemySpawner" type="Timer" parent="."]
+autostart = true
+
+[node name="LevelUpUI" parent="." instance=ExtResource("5_tbgi4")]
+
+[node name="Hud" parent="." instance=ExtResource("6_tefeu")]
+
+[connection signal="health_changed" from="WorldEntities/Player" to="Hud" method="update_health"]
+[connection signal="leveled_up" from="WorldEntities/Player" to="LevelUpUI" method="show_options"]
+[connection signal="xp_changed" from="WorldEntities/Player" to="Hud" method="update_xp"]
+[connection signal="upgrade_selected" from="LevelUpUI" to="WorldEntities/Player" method="apply_upgrade"]

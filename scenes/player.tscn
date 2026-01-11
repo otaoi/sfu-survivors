@@ -1,0 +1,64 @@
+[gd_scene load_steps=8 format=3 uid="uid://b5an58pb0js3g"]
+
+[ext_resource type="Script" uid="uid://cjc2tid7oy0gk" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="PackedScene" uid="uid://c3bfp85dusq2d" path="res://scenes/projectile.tscn" id="2_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://cxxjj0ec85e0g" path="res://assets/purepng.com-raccoon-sittingracconwaschbeaerraccon-sittinggrey-raccon-481521103213washa.png" id="3_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://bfkjks3g7o2p0" path="res://assets/5b3554aad99aaa8eb1330d9db792a147af4ddeffb31d15cafb8c576d35a011f3.png" id="4_dqkch"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g2els"]
+radius = 14.430751
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qhqgy"]
+radius = 81.86192
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dqkch"]
+radius = 313.34485
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+collision_mask = 3
+script = ExtResource("1_g2els")
+projectile_scene = ExtResource("2_qhqgy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(6.67572e-06, -9.084927)
+scale = Vector2(-0.05512992, 0.08101297)
+texture = ExtResource("3_qhqgy")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(6, 10.5)
+scale = Vector2(0.23360929, 0.14511873)
+texture = ExtResource("4_dqkch")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+modulate = Color(0.78431374, 0.78431374, 0.10980392, 1)
+scale = Vector2(0.49, 0.49)
+shape = SubResource("CircleShape2D_g2els")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+process_callback = 0
+position_smoothing_enabled = true
+
+[node name="HurtBox" type="Area2D" parent="."]
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+self_modulate = Color(1, 0.4166032, 0.34792536, 1)
+scale = Vector2(0.49, 0.49)
+shape = SubResource("CircleShape2D_qhqgy")
+
+[node name="AttackRange" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRange"]
+visible = false
+shape = SubResource("CircleShape2D_dqkch")
+
+[node name="DamageTimer" type="Timer" parent="."]
+wait_time = 0.595
+one_shot = true
+
+[node name="AttackTimer" type="Timer" parent="."]
+wait_time = 0.669
+autostart = true
+
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]

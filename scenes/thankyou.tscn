@@ -1,0 +1,327 @@
+[gd_scene load_steps=16 format=3 uid="uid://c1o88epvsm5qv"]
+
+[ext_resource type="Script" uid="uid://k00tw8x6qhbm" path="res://scripts/thankyou.gd" id="1_q331p"]
+[ext_resource type="Texture2D" uid="uid://cv7c58w1u3sb6" path="res://assets/backgroundmenu.png" id="2_anbt0"]
+[ext_resource type="Texture2D" uid="uid://b7ylft1f5eynk" path="res://assets/titlepicolour.png" id="3_q87wc"]
+[ext_resource type="FontFile" uid="uid://c7p56xe18moiv" path="res://assets/PixelGrunge.ttf" id="4_0aghh"]
+[ext_resource type="Texture2D" uid="uid://5cdsdpgcxvky" path="res://assets/legsidle.png" id="4_0q2cj"]
+[ext_resource type="Texture2D" uid="uid://cr8h5y7pmfprw" path="res://assets/loweridle.png" id="5_gc0l2"]
+[ext_resource type="AudioStream" uid="uid://ceke2bi2sppoi" path="res://assets/uiclick.wav" id="5_vm3uv"]
+[ext_resource type="Texture2D" uid="uid://b5qgxytg40dph" path="res://assets/upperidle.png" id="6_xku64"]
+[ext_resource type="Texture2D" uid="uid://jb7l5t0yech1" path="res://assets/headidle.png" id="7_nv08b"]
+[ext_resource type="Texture2D" uid="uid://cknn6no04jugl" path="res://assets/eyesidle.png" id="8_2qs7s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r3g3c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3vvtq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s5g8n"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7yvfd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dfy5j"]
+
+[node name="Mainmenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+script = ExtResource("1_q331p")
+
+[node name="ColorRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_anbt0")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 364.0
+offset_top = 164.01
+offset_right = 876.0
+offset_bottom = 420.00934
+scale = Vector2(0.825, 0.825)
+texture = ExtResource("3_q87wc")
+
+[node name="Visuals" type="Node2D" parent="TextureRect"]
+position = Vector2(835.15155, 424.23035)
+scale = Vector2(1.73, 1.73)
+
+[node name="Legs" type="Sprite2D" parent="TextureRect/Visuals"]
+scale = Vector2(1.73, 1.73)
+texture = ExtResource("4_0q2cj")
+vframes = 2
+
+[node name="Lower" type="Sprite2D" parent="TextureRect/Visuals"]
+scale = Vector2(1.73, 1.73)
+texture = ExtResource("5_gc0l2")
+vframes = 2
+
+[node name="Upper" type="Sprite2D" parent="TextureRect/Visuals"]
+scale = Vector2(1.73, 1.73)
+texture = ExtResource("6_xku64")
+vframes = 2
+
+[node name="Head" type="Sprite2D" parent="TextureRect/Visuals"]
+scale = Vector2(1.73, 1.73)
+texture = ExtResource("7_nv08b")
+vframes = 2
+
+[node name="Eyes" type="Sprite2D" parent="TextureRect/Visuals"]
+scale = Vector2(1.73, 1.73)
+texture = ExtResource("8_2qs7s")
+vframes = 2
+
+[node name="LevelsButton" type="Button" parent="."]
+modulate = Color(0.3443802, 0.84247446, 0.5021456, 1)
+self_modulate = Color(0.71305174, 0.89729017, 0.98006505, 1)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -116.5
+offset_top = 156.77
+offset_right = 116.5
+offset_bottom = 182.77
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 39
+theme_override_fonts/font = ExtResource("4_0aghh")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxEmpty_r3g3c")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_3vvtq")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_s5g8n")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_7yvfd")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dfy5j")
+disabled = true
+text = "Thanks for playing
+"
+
+[node name="LevelsButton2" type="Button" parent="."]
+modulate = Color(0.85617495, 5.4050834e-05, 0.35064033, 1)
+self_modulate = Color(0.11095803, 0.38523698, 0.48530364, 1)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -128.5
+offset_top = 355.095
+offset_right = 128.5
+offset_bottom = 381.095
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 39
+theme_override_fonts/font = ExtResource("4_0aghh")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxEmpty_r3g3c")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_3vvtq")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_s5g8n")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_7yvfd")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dfy5j")
+disabled = true
+text = "More levels out soon"
+
+[node name="ExitButton" type="Button" parent="."]
+modulate = Color(0.99582344, 0.9746885, 0.95078236, 1)
+self_modulate = Color(0.10314422, 0.7733491, 0.88119924, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -108.0
+offset_top = 101.01999
+offset_right = 108.0
+offset_bottom = 127.01999
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 39
+theme_override_fonts/font = ExtResource("4_0aghh")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxEmpty_r3g3c")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_3vvtq")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_s5g8n")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_7yvfd")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dfy5j")
+text = "Exit to Main Menu"
+
+[node name="MainPage" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 485.5
+offset_top = 343.685
+offset_right = 666.5
+offset_bottom = 417.685
+
+[node name="LevelsPage" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 378.0
+offset_top = 334.845
+offset_right = 797.0
+offset_bottom = 466.84485
+
+[node name="LevelGrid" type="GridContainer" parent="LevelsPage"]
+layout_mode = 2
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
+columns = 4
+
+[node name="Lvl1" type="Button" parent="LevelsPage/LevelGrid"]
+modulate = Color(1, 0.23838565, 0.24216619, 1)
+self_modulate = Color(0.71305174, 0.89729017, 0.98006505, 1)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 39
+theme_override_fonts/font = ExtResource("4_0aghh")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxEmpty_r3g3c")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_3vvtq")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_s5g8n")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_7yvfd")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dfy5j")
+text = "Lvl Tut"
+
+[node name="Lvl2" type="Button" parent="LevelsPage/LevelGrid"]
+modulate = Color(0.9228499, 0.6221036, 3.85046e-07, 1)
+self_modulate = Color(0.71305174, 0.89729017, 0.98006505, 1)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 39
+theme_override_fonts/font = ExtResource("4_0aghh")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxEmpty_r3g3c")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_3vvtq")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_s5g8n")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_7yvfd")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dfy5j")
+text = "Level 2"
+
+[node name="Lvl3" type="Button" parent="LevelsPage/LevelGrid"]
+modulate = Color(0.99757475, 0.56369144, 0.78217894, 1)
+self_modulate = Color(0.71305174, 0.89729017, 0.98006505, 1)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 39
+theme_override_fonts/font = ExtResource("4_0aghh")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxEmpty_r3g3c")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_3vvtq")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_s5g8n")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_7yvfd")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dfy5j")
+text = "Level 3"
+
+[node name="Lvl4" type="Button" parent="LevelsPage/LevelGrid"]
+modulate = Color(0.7711111, 0.27983767, 0.042528816, 1)
+self_modulate = Color(0.71305174, 0.89729017, 0.98006505, 1)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 39
+theme_override_fonts/font = ExtResource("4_0aghh")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxEmpty_r3g3c")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_3vvtq")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_s5g8n")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_7yvfd")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dfy5j")
+text = "Level 4"
+
+[node name="Lvl5" type="Button" parent="LevelsPage/LevelGrid"]
+modulate = Color(0.15059021, 0.57437956, 0.5260413, 1)
+self_modulate = Color(0.7466923, 0.88643444, 0.99017245, 1)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 39
+theme_override_fonts/font = ExtResource("4_0aghh")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxEmpty_r3g3c")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_3vvtq")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_s5g8n")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_7yvfd")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dfy5j")
+text = "Level 5"
+
+[node name="Lvl6" type="Button" parent="LevelsPage/LevelGrid"]
+modulate = Color(0.09221027, 0.8177674, 0.8942496, 1)
+self_modulate = Color(0.71305174, 0.89729017, 0.98006505, 1)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 39
+theme_override_fonts/font = ExtResource("4_0aghh")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxEmpty_r3g3c")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_3vvtq")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_s5g8n")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_7yvfd")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dfy5j")
+text = "Level 6"
+
+[node name="Lvl7" type="Button" parent="LevelsPage/LevelGrid"]
+self_modulate = Color(0.71305174, 0.89729017, 0.98006505, 1)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 39
+theme_override_fonts/font = ExtResource("4_0aghh")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxEmpty_r3g3c")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_3vvtq")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_s5g8n")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_7yvfd")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dfy5j")
+text = "Level 7"
+
+[node name="Lvl8" type="Button" parent="LevelsPage/LevelGrid"]
+modulate = Color(1, 0.17452744, 0.123755686, 1)
+self_modulate = Color(0.71305174, 0.89729017, 0.98006505, 1)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 39
+theme_override_fonts/font = ExtResource("4_0aghh")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxEmpty_r3g3c")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_3vvtq")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_s5g8n")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_7yvfd")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dfy5j")
+text = "Level 8"
+
+[node name="Control" type="Control" parent="LevelsPage"]
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="LevelsPage"]
+modulate = Color(0.10343907, 0.4593532, 0.7782245, 1)
+self_modulate = Color(0.71305174, 0.89729017, 0.98006505, 1)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 39
+theme_override_fonts/font = ExtResource("4_0aghh")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxEmpty_r3g3c")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_3vvtq")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_s5g8n")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_7yvfd")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dfy5j")
+text = "Back"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_vm3uv")
+volume_db = -5.86
+pitch_scale = 2.2
